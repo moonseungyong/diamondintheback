@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="loading">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diamond in the Back</title>
+    <meta name="author" content="Oluwaseyi Oluwadare for Codrops" />
+    <link rel="shortcut icon" href="./favicon.ico">
+    <script>document.documentElement.className="js";</script>
+    <style>
+    
+    </style>
+    <script type="module" crossorigin src="./assets/index-DeWsmIEL.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CL4K5Y2R.css">
+  </head>
+  <body>
+    <header class="frame">
+      <div class="frame__toggle">
+        <div class="toggle"><a id="toggleView" class="gridflow">Grid</a></div>
+      </div>
+      <div class="frame__title">
+        <div class="title">  <a href="/" id="title">Diamond in the Back</a></div>
+      </div>
+      <div class="frame__info">
+        <a id="aboutButton" class="frame__button">Information</a>
+      </div>
+    </header>
+    <main class="c-home c-page">
+      <canvas id="gl"></canvas>
+      <div id="gridGallery" class="grid-gallery"></div>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose"><img class="close-icons" src = "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24px'%20viewBox='0%20-960%20960%20960'%20width='24px'%20fill='%23ffffff'%3e%3cpath%20d='M256-213.85%20213.85-256l224-224-224-224L256-746.15l224%20224%20224-224L746.15-704l-224%20224%20224%20224L704-213.85l-224-224-224%20224Z'/%3e%3c/svg%3e" alt="close"/></button>
+      <div class="lightbox-nav">
+        <button id="prevImage"><img class="icons" src = "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24px'%20viewBox='0%20-960%20960%20960'%20width='24px'%20fill='%23ffffff'%3e%3cpath%20d='M400-93.85%2013.85-480%20400-866.15l56.77%2056.77L127.38-480l329.39%20329.38L400-93.85Z'/%3e%3c/svg%3e" alt="back"/></button>
+        <button id="nextImage"><img class="icons" src = "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24px'%20viewBox='0%20-960%20960%20960'%20width='24px'%20fill='%23ffffff'%3e%3cpath%20d='m320.62-93.85-56.77-56.77L593.23-480%20263.85-809.38l56.77-56.77L706.77-480%20320.62-93.85Z'/%3e%3c/svg%3e" alt="forward"/></button>
+      </div>
+      <img src="" alt="Lightbox image" id="lightboxImage">
+    </div>
+
+    <!-- About Modal -->
+    <div class="modal-overlay" id="aboutModal">
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose"><img class="close-icons" src = "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24px'%20viewBox='0%20-960%20960%20960'%20width='24px'%20fill='%23ffffff'%3e%3cpath%20d='M256-213.85%20213.85-256l224-224-224-224L256-746.15l224%20224%20224-224L746.15-704l-224%20224%20224%20224L704-213.85l-224-224-224%20224Z'/%3e%3c/svg%3e" alt="close"/></button>
+        <div class="about">
+          A YouTube upload, a simple error, and suddenly, <span class="italic">Curtis Mayfield</span> had a hit he never recorded: "Diamond in the Back." This strange case of mistaken musical identity reveals a fascinating truth: we can easily accept something as real, even when it isn't. This website explores that phenomenon in the age of AI. Just as "Diamond in the Back" took on a life of its own, the AI here conjures images and content that feel strikingly authentic, yet are entirely synthetic. Is it "ours"? Is it "theirs"? Diamond in the Back is a space for us to ponder these questions, to examine the increasingly blurry line between human creation and artificial generation.
+          <br><br><br>
+          Other Projects:<br>
+          <a href="https://wraparoundtheworld.online/" target="_blank">wraparoundtheworld.online</a>
+<br>
+<a href="https://seungyongmoon.com/" target="_blank">seungyongmoon.com</a>
+<br>
+<br>
+General Inquiries and New Business:<br>
+<a href="mailto:seungyongmoon@gmail.com" target="_blank">seungyongmoon@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div id="currentTime"></div>
+      <div class="frame__count"></div>
+    </footer>
+
+    <script>
+ function updateTime() {
+    const timeElement = document.getElementById('currentTime');
+    const now = new Date();
+    
+    const year = now.getFullYear();
+    const month = (now.getMonth() + 1).toString().padStart(2, '0'); // Adding 1 to month index as it is zero-based
+    const day = now.getDate().toString().padStart(2, '0');
+    const hour = now.getHours().toString().padStart(2, '0');
+    const minute = now.getMinutes().toString().padStart(2, '0');
+    const second = now.getSeconds().toString().padStart(2, '0');
+    
+    const dateTimeString = `${year}-${month}-${day} ${hour}:${minute}:${second}`;
+    
+    timeElement.textContent = dateTimeString;
+}
+
+// Initial update
+updateTime();
+
+// Update every second
+setInterval(updateTime, 1000);
+    </script>
+  </body>
+</html>
